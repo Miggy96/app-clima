@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<div>
+<head>
+    <title>Clima Hoy</title>
+    <link href="style.css" rel="stylesheet"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;1,300&family=Open+Sans&family=Work+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+</head>
+
+<style> 
+    .ubicacion { 
+        font-size: 25px;
+     }
+
+    .consulta { 
+        width: 25px;
+        height: 25px;
+    }
+
+    .boton {
+        font-size: 25px;
+        ;
+
+    }
+    
+    #tiempo-actual { 
+        font-size: 40px;
+        color: greenyellow;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h1 {
+        font-family: 'Open Sans', sans-serif ;
+        border-width: 5px;
+        border-width: blue;
+        text-align: center;
+        
+        
+    }
+
+    h3 { 
+        font-size: 26px;
+        font-family: 'Nunito', sans-serif;
+        text-align: center;
+    }
+
+    ul {
+        font-size: 20px;
+        color: black;
+        text-align: center;
+
+    }
+   
+    
+    button { 
+        font-size: 25px;
+        
+    }
+
+    .grados {
+        text-align: center;
+
+    }
+     
+    .central { 
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .estado-actual{
+        color:  cornflowerblue;
+    }
+
+    .descripcion{
+        color: blueviolet;
+    }
+
+    .longitud{
+        color: greenyellow;
+    }
+
+    .boton {
+        font-size: 25px;
+
+    }
+
+    
+
+
+</style>
+<div>
+<body>
+    <h1 id="tiempo-actual">Consulta del Tiempo</h1><br>  
+</div>
+    <h3>Aqui podras ver informacion del clima y tiempo de tu ciudad en tiempo real</h3>
+    <form method="POST" action="/clima"><br>
+        <br>
+        <div class="central">
+        <label class="ubicacion"for="city">Ciudad:</label>
+        <input class="boton"type="text" id="city" name="city" required placeholder="Ingresa la ciudad">
+        <button class="Consulta"type="submit">Consultar</button>
+        </div>
+    </form><br>
+    {% if temperature is not none %}
+    <h3>Resultados de la busqueda</h3>
+    <div class="grados">
+    
+    <p>Temperatura: {{ temperature }}°C</p>
+    <p>Descripción del tiempo: {{ weather_description }}</p>
+    <p>longitud actual: {{lon}}</p>
+    <p>Humedad actual: {{humidity}}</p>
+    <p>Latitud actual: {{lat}}</p>
+    </div>
+    
+    {% endif %}
+</body>
+</html>
